@@ -29,13 +29,14 @@ function listarLivros() {
 
     livros.forEach((livro, index) => {
         const li = document.createElement('li');
+        li.className = 'list-group-item';
         li.innerHTML = `
             <strong>Título:</strong> ${livro.titulo} <br>
             <strong>Autor:</strong> ${livro.autor} <br>
             <strong>Gênero:</strong> ${livro.genero} <br>
             <strong>Ano:</strong> ${livro.ano} <br>
             <strong>Avaliação:</strong> ${livro.avaliacao} <br>
-            <button onclick="avaliarLivro(${index})">Avaliar</button>
+            <button class="btn btn-info mt-2" onclick="avaliarLivro(${index})">Avaliar</button>
         `;
         ul.appendChild(li);
     });
@@ -84,3 +85,4 @@ document.getElementById('classificar-avaliacao').addEventListener('click', () =>
 
 // Carregar livros ao iniciar
 listarLivros();
+

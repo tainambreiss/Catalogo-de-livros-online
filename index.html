@@ -3,42 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo de Livros</title>
+    <title>Catálogo de Livros Online</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Catálogo de Livros Online</h1>
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">Catálogo de Livros Online</h1>
 
-    <section>
-        <h2>Adicionar Livro</h2>
-        <form id="form-adicionar-livro">
-            <label for="titulo">Título:</label>
-            <input type="text" id="titulo" required>
-            <label for="autor">Autor:</label>
-            <input type="text" id="autor" required>
-            <label for="genero">Gênero:</label>
-            <input type="text" id="genero" required>
-            <label for="ano">Ano de Publicação:</label>
-            <input type="number" id="ano" required>
-            <label for="avaliacao">Avaliação:</label>
-            <input type="number" id="avaliacao" min="1" max="5" required>
-            <button type="submit">Adicionar</button>
-        </form>
-    </section>
+        <section class="mb-4">
+            <h2>Adicionar Livro</h2>
+            <form id="form-adicionar-livro" class="form-group">
+                <div class="form-row">
+                    <div class="col">
+                        <label for="titulo">Título:</label>
+                        <input type="text" id="titulo" class="form-control" required>
+                    </div>
+                    <div class="col">
+                        <label for="autor">Autor:</label>
+                        <input type="text" id="autor" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-row mt-2">
+                    <div class="col">
+                        <label for="genero">Gênero:</label>
+                        <input type="text" id="genero" class="form-control" required>
+                    </div>
+                    <div class="col">
+                        <label for="ano">Ano de Publicação:</label>
+                        <input type="number" id="ano" class="form-control" required>
+                    </div>
+                    <div class="col">
+                        <label for="avaliacao">Avaliação:</label>
+                        <input type="number" id="avaliacao" class="form-control" min="1" max="5" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary mt-3">Adicionar</button>
+            </form>
+        </section>
 
-    <section>
-        <h2>Buscar Livro</h2>
-        <input type="text" id="buscar" placeholder="Buscar por título, autor ou gênero">
-    </section>
+        <section class="mb-4">
+            <h2>Buscar Livro</h2>
+            <input type="text" id="buscar" class="form-control" placeholder="Buscar por título, autor ou gênero">
+        </section>
 
-    <section>
-        <h2>Livros Disponíveis</h2>
-        <button id="classificar-titulo">Classificar por Título</button>
-        <button id="classificar-autor">Classificar por Autor</button>
-        <button id="classificar-avaliacao">Classificar por Avaliação</button>
-        <ul id="lista-livros"></ul>
-    </section>
+        <section>
+            <h2>Livros Disponíveis</h2>
+            <div class="btn-group mb-3" role="group">
+                <button id="classificar-titulo" class="btn btn-secondary">Classificar por Título</button>
+                <button id="classificar-autor" class="btn btn-secondary">Classificar por Autor</button>
+                <button id="classificar-avaliacao" class="btn btn-secondary">Classificar por Avaliação</button>
+            </div>
+            <ul id="lista-livros" class="list-group"></ul>
+        </section>
+    </div>
 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
